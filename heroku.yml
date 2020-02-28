@@ -1,7 +1,3 @@
-setup:
-  config:
-    HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR: DATABASE_URL
-    HASURA_GRAPHQL_DATABASE_URL: DATABASE_URL
 build:
   docker:
     web: Dockerfile

@@ -1,8 +1,7 @@
-FROM hasura/graphql-engine:v1.2.0-rj.1.cli-migrations
+FROM hasura/graphql-engine:v1.1.0
 
 # Enable the console
-ENV HASURA_GRAPHQL_ENABLE_CONSOLE="true"
-ENV HASURA_GRAPHQL_DATABASE_URL=$DATABASE_URL
+ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
 
 COPY ./db/migrations /hasura-migrations
 

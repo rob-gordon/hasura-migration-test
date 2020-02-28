@@ -1,13 +1,7 @@
-FROM hasura/graphql-engine:v1.2.0-beta.1
+FROM hasura/graphql-engine:latest.cli-migrations
 
-# set an env var to let the cli know that
-# it is running in server environment
-ENV HASURA_GRAPHQL_CLI_ENVIRONMENT=server-on-docker
-
-COPY docker-entrypoint.sh /bin/
-COPY cli-hasura-linux-amd64 /bin/hasura-cli
-RUN chmod +x /bin/hasura-cli
-
-ENTRYPOINT ["docker-entrypoint.sh"]
-
-CMD ["graphql-engine", "serve"]
+CMD graphql-engine \
+  --database-url $DATABASE_URL \
+  serve \
+  --server-port $PORT \
+  --enable-console

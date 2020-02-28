@@ -3,9 +3,8 @@ setup:
     - plan: heroku-postgresql
       as: DATABASE
   config:
-    HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR: DATABASE_URL
-    HASURA_GRAPHQL_DATABASE_URL: DATABASE_URL
-    MY_CUSTOM_VAL: "Sup broseph"
+    HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR: ${DATABASE_URL}
+    HASURA_GRAPHQL_DATABASE_URL: ${DATABASE_URL}
 build:
   docker:
     web: Dockerfile

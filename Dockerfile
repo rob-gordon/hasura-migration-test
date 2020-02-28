@@ -1,16 +1,8 @@
-ARG HASURA_GRAPHQL_DATABASE_URL
-ARG MY_CUSTOM_VAL
-
 FROM hasura/graphql-engine:latest.cli-migrations
-
-# ARG HASURA_GRAPHQL_DATABASE_URL=${DATABASE_URL}
-# ENV HASURA_GRAPHQL_DATABASE_URL ${DATABASE_URL}
-
-RUN echo "The value of our var is $HASURA_GRAPHQL_DATABASE_URL or $MY_CUSTOM_VAL"
 
 ADD db/migrations /hasura-migrations/
 
-CMD graphql-engine \
+CMD echo $HASURA_GRAPHQL_DATABASE_URL && graphql-engine \
   --database-url $DATABASE_URL \
   serve \
   --server-port $PORT \

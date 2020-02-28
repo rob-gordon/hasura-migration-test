@@ -5,5 +5,8 @@ setup:
   config:
     HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR: DATABASE_URL
 build:
+  config:
+    HASURA_GRAPHQL_DATABASE_URL: "{{ .DATABASE_URL }}"
+    MY_CUSTOM_VAL: "Sup broseph"
   docker:
     web: Dockerfile

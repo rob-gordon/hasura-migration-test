@@ -1,9 +1,9 @@
-FROM hasura/graphql-engine:v1.1.0
+FROM hasura/graphql-engine:v1.0.0-alpha42.cli-migrations
 
 # Enable the console
 ENV HASURA_GRAPHQL_ENABLE_CONSOLE=true
 
-COPY ./db/migrations /hasura-migrations
+ADD db/migrations /hasura-migrations/
 
 # Change $DATABASE_URL to your heroku postgres URL if you're not using
 # the primary postgres instance in your app

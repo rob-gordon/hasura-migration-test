@@ -6,6 +6,7 @@ FROM hasura/graphql-engine:latest.cli-migrations
 ENV HASURA_GRAPHQL_DATABASE_URL apples
 
 RUN echo "Oh dang look at that ${HASURA_GRAPHQL_DATABASE_URL}"
+RUN echo "Even maybe some kind of ${DATABASE_URL}"
 
 ADD db/migrations /hasura-migrations/
 

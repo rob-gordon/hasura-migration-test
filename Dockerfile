@@ -1,4 +1,9 @@
+ARG HASURA_GRAPHQL_DATABASE_URL
+ARG HASURA_GRAPHQL_MIGRATIONS_DATABASE_ENV_VAR
+
 FROM hasura/graphql-engine:latest.cli-migrations
+
+RUN echo "Oh dang look at that $some_variable_name"
 
 ADD db/migrations /hasura-migrations/
 

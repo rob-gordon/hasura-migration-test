@@ -1,8 +1,0 @@
-{
-  "name": "fun-with-migrations",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:rob-gordon/hasura-migration-test.git",
-  "author": "Rob Gordon <rchristopher.gordon@gmail.com>",
-  "license": "MIT"
-}
